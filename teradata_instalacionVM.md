@@ -80,13 +80,14 @@ En el prompt del password:
 La sesión BTEQ reportará que te logeaste con éxito: 
 Logon successfully completed.
 
-` *** Teradata Database Release is 16.00.00.04                   
+```SQL
+*** Teradata Database Release is 16.00.00.04                   
  *** Teradata Database Version is 16.00.00.04                     
  *** Transaction Semantics are BTET.
- *** Session Character Set Name is 'ASCII'. ` 
+ *** Session Character Set Name is 'ASCII'. 
  
- ` *** Total elapsed time was 1 second. `
-
+  *** Total elapsed time was 1 second. 
+```
 Ejecutar una consulta:
 
 `select * from dbc.dbcinfo`
