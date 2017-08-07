@@ -1,0 +1,60 @@
+Escribir el comando:
+
+/usr/bin/bteq
+
+En el login prompt escribir:
+
+.logon 127.0.0.1/dbc
+
+En el prompt del password:
+
+dbc
+
+
+Ejecutar una consulta:
+
+select * from DBC.Databases;
+
+
+Para usar a una base de datos en particular:
+
+set session database datio;
+
+Para listar todas las tablas de una base de datos:
+
+SELECT * FROM dbc.tables WHERE tablekind = 'T' and databasename='datio';
+
+Para eliminar una tabla:
+
+drop table EMPLOYEE;
+
+
+
+CREATE SET TABLE Employee
+( EmployeeNo INTEGER, FirstName VARCHAR(30), 
+LastName VARCHAR(30), DOB DATE FORMAT 'YYYY-MM-DD', 
+JoinedDate DATE FORMAT 'YYYY-MM-DD', DepartmentNo BYTEINT ) 
+UNIQUE PRIMARY INDEX ( EmployeeNo );
+
+INSERT INTO Employee ( EmployeeNo, FirstName, LastName, DOB, JoinedDate, DepartmentNo ) VALUES ( 101, 'Mike', 'James', '1980-01-05', '2005-03-27', 01 ); INSERT INTO Employee  ( EmployeeNo, FirstName, LastName, DOB, JoinedDate, DepartmentNo ) VALUES ( 102, 'Carlos', 'Nieto', '1994-01-08', '2006-08-21', 02 ); INSERT INTO Employee  ( EmployeeNo, FirstName, LastName, DOB, JoinedDate, DepartmentNo ) VALUES ( 103, 'Martha', 'Sanchez', '1987-09-20', '2009-08-21', 01 ); INSERT INTO Employee  ( EmployeeNo, FirstName, LastName, DOB, JoinedDate, DepartmentNo ) VALUES ( 104, 'Daniel', 'Arenas', '1982-08-13', '2001-02-10', 03 );
+
+Ver que se creó la tabla
+select * from Employee;
+
+Esportar la tabla a un archivo csv
+
+.set width 240; 
+.EXPORT REPORT FILE=employee.csv; 
+.SET RECORDMODE OFF;
+.SET FORMAT OFF; 
+.SET TITLEDASHES OFF;
+.SET SEPARATOR ',';
+ SELECT * from Employee;
+.EXPORT RESET 
+.LOGOFF; 
+.EXIT;
+
+
+
+
+
